@@ -19,7 +19,6 @@ static char SccsId[]="@(#)rail 26-Jul-1998";
 #define USAGE	"usage: %s [-+acdit] [file]\n"
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 
