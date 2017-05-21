@@ -56,6 +56,12 @@ extern int yydebug;	/* show yacc debugging */
 
 int anonymous;		/* anonymous rules */
 
+void usage();
+void checkdefs();
+void fatal(char *f, char *s);
+void posbody(BODYTYPE *body, int ystart);
+void fmtbody(BODYTYPE* body, char *cent, char arrow);
+
 int main(int argc, char* argv[])
 {
 	char *arg, **argp;
