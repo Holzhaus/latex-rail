@@ -6,10 +6,13 @@
 # 14-Jan-1997 K. Barthelmann	minor modifications
 # 28-Oct-1997 K. Barthelmann	minor modifications
 #
+PREFIX = /usr/local
+DESTDIR =
 
-BINDIR=$(HOME)/bin
-TEXDIR=$(HOME)/tex
-MANDIR=$(HOME)/man
+BINDIR=$(PREFIX)/bin
+TEXDIR=$(PREFIX)/share/texmf/tex/latex/rail
+MANDIR=$(PREFIX)/share/man
+
 MANSUFFIX=l
 
 OBJS=rail.o gram.o lex.o
@@ -25,9 +28,9 @@ LEX=flex
 all: rail 
 
 install: rail rail.sty rail.man
-	cp rail $(BINDIR)
-	cp rail.sty $(TEXDIR)
-	cp rail.man $(MANDIR)/man$(MANSUFFIX)/rail.$(MANSUFFIX)
+	install -Dm 755 rail "$(DESTDIR)$(BINDIR)/rail"
+	install -Dm 644 rail.sty "$(DESTDIR)$(TEXDIR)/rail.sty"
+	install -Dm 644 rail.man "$(DESTDIR)$(MANDIR)/man$(MANSUFFIX)/rail.$(MANSUFFIX)"
 
 clean:
 	-rm -f $(OBJS) rail gram.[ch] lex.c y.tab.[ch] y.output a.out core PATCH
