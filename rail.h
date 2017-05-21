@@ -2,6 +2,7 @@
  * rail.h - global definitions for rail program
  *
  */
+#include <stdio.h>
 
 #define RIGHT_ARROW 'r'         /* right arrowhead (prefix for LaTeX macros)*/
 #define LEFT_ARROW  'l'         /* right arrowhead (prefix for LaTeX macros)*/
