@@ -71,19 +71,19 @@ extern IDTYPE *errorid;
 extern char *mcheck();
 
 extern BODYTYPE *newbody();
-extern freebody();
+extern void freebody();
 extern int isemptybody();
 extern BODYTYPE *addbody();
 extern BODYTYPE *revbody();
 
 extern RULETYPE *newrule();
-extern freerule();
+extern void freerule();
 extern RULETYPE *addrule();
-extern outrule();
+extern void outrule();
 
 extern IDTYPE *lookup();
-extern delete();
+extern void delete();
 
-extern undef();
-extern redef();
-extern error();
+extern void undef();
+extern void redef();
+extern void error();

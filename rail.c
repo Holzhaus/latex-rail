@@ -56,9 +56,7 @@ extern int yydebug;	/* show yacc debugging */
 
 int anonymous;		/* anonymous rules */
 
-main(argc,argv)
-unsigned argc;
-char *argv[];
+int main(int argc, char* argv[])
 {
 	char *arg, **argp;
 	unsigned len;
@@ -121,11 +119,11 @@ char *argv[];
 	}
 
 	exit(0);
+    return 0;
 	/*NOTREACHED*/
 }
 
-int setopt(c,s)
-char c, *s;
+int setopt(char c, char *s)
 {
 	int set;
 
@@ -169,7 +167,7 @@ char c, *s;
 	return 1;
 }
 
-usage()
+void usage()
 {
 	fprintf(stderr,USAGE,myname);
 	exit(1);
@@ -177,15 +175,14 @@ usage()
 
 /* error routine for yyparse() */
 
-yyerror(s)
-char *s;
+void yyerror(char *s)
 {
 	fatal("%s",s);
 }
 
 /* wrap-up routine for yylex() */
 
-yywrap()
+int yywrap()
 {
 	return(1);
 }
@@ -228,7 +225,7 @@ BODYTYPE *body1, *body2;
 
 /* free a body recursively */
 
-freebody(body)
+void freebody(body)
 BODYTYPE *body;
 {
 	int i;
@@ -256,7 +253,7 @@ BODYTYPE *body;
 
 /* add to a body list */
 
-static addlist(body1,body2)
+static void addlist(body1,body2)
 BODYTYPE *body1, *body2;
 {
 	if(body1->nlist>=MAXLIST) {
@@ -316,7 +313,7 @@ BODYTYPE *body;
 
 /* print a body for debugging */
 
-prtbody(indent,body)
+void prtbody(indent,body)
 int indent;
 BODYTYPE *body;
 {
@@ -378,7 +375,7 @@ BODYTYPE *body;
 
 /* output a body */
 
-outbody(id,body)
+void outbody(id,body)
 IDTYPE *id;
 BODYTYPE *body;
 {
@@ -405,10 +402,7 @@ BODYTYPE *body;
 
 /* format a body */
 
-fmtbody(body,cent,arrow)
-BODYTYPE *body;
-char *cent;
-char arrow;
+void fmtbody(BODYTYPE* body, char *cent, char arrow)
 {
 	BODYTYPE *body1;
 	int i;
@@ -496,8 +490,7 @@ char arrow;
 
 /* position body (fill in height and ystart) */
 
-posbody(body,ystart)
-BODYTYPE *body;
+void posbody(BODYTYPE *body, int ystart)
 {
 	BODYTYPE *body1;
 	int i;
@@ -553,7 +546,7 @@ BODYTYPE *body;
 
 /* output an index entry */
 
-outindex(id)
+void outindex(id)
 IDTYPE *id;
 {
 	if(id!=NULL)
@@ -578,7 +571,7 @@ BODYTYPE *body;
 
 /* free a rule list */
 
-freerule(rule)
+void freerule(rule)
 RULETYPE *rule;
 {
 	RULETYPE *rulep;
@@ -611,7 +604,7 @@ RULETYPE *rule1, *rule2;
 
 /* output a rule list */
 
-outrule(rule)
+void outrule(rule)
 RULETYPE *rule;
 {
 	while(rule!=NULL) {
@@ -650,7 +643,7 @@ char *name;
 
 /* delete an identifier */
 
-delete(id)
+void delete(id)
 IDTYPE *id;
 {
 	IDTYPE *idp, **idq;
@@ -667,7 +660,7 @@ IDTYPE *id;
 
 /* check that there are no undefined identifiers */
 
-checkdefs()
+void checkdefs()
 {
 	IDTYPE *id;
 
@@ -678,7 +671,7 @@ checkdefs()
 
 /* complain about an undefined identifier */
 
-undef(id)
+void undef(id)
 IDTYPE *id;
 {
 	if(chkgram)
@@ -687,7 +680,7 @@ IDTYPE *id;
 
 /* complain about a redefined identifier */
 
-redef(id)
+void redef(id)
 IDTYPE *id;
 {
 	if(chkgram)
@@ -696,7 +689,7 @@ IDTYPE *id;
 
 /* display an error */
 
-error(f,s)
+void error(f,s)
 char *f, *s;
 {
 	if(newline) {
@@ -715,8 +708,7 @@ char *f, *s;
 	fprintf(stderr,"\n");
 }
 
-fatal(f,s)
-char *f,*s;
+void fatal(char *f, char *s)
 {
 	error(f,s);
 
