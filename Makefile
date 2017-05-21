@@ -25,7 +25,7 @@ LEX=flex
 
 .PHONY: all install clean lint shar tar path doc
 
-all: rail 
+all: rail
 
 install: rail rail.sty rail.man
 	install -Dm 755 rail "$(DESTDIR)$(BINDIR)/rail"
@@ -36,9 +36,9 @@ clean:
 	-rm -f $(OBJS) rail gram.[ch] lex.c y.tab.[ch] y.output a.out core PATCH
 	-rm -f *.log *.aux *.rai *.rao *.dvi rail.pdf rail.txt SHAR.* TAR MANIFEST.BAK
 
-lint: rail.c gram.c lex.c gram.h 
+lint: rail.c gram.c lex.c gram.h
 	lint rail.c gram.c lex.c
-	
+
 shar:
 	makekit -m -n SHAR.
 
