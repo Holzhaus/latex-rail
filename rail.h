@@ -87,3 +87,8 @@ extern void delete();
 extern void undef();
 extern void redef();
 extern void error();
+
+
+extern int yylex (void);
+extern void yyerror(char *s);
+extern int setopt(char c, char* s);
