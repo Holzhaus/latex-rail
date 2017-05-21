@@ -21,6 +21,8 @@ static char SccsId[]="@(#)rail 26-Jul-1998";
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+
 
 #include "patchlevel.h"
 #include "rail.h"
