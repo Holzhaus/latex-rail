@@ -5,6 +5,7 @@
 # 12-Feb-1991 L. Rooijakkers	added 'patch' target
 # 14-Jan-1997 K. Barthelmann	minor modifications
 # 28-Oct-1997 K. Barthelmann	minor modifications
+# 21-May-2017 J. Holthuis		improved installation, misc fixes
 #
 PREFIX = /usr/local
 DESTDIR =
