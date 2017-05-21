@@ -21,4 +21,5 @@ Update history:
 18-Apr-98 K. B./J. Olsson	improved \par handling
 19-May-98 J. Olsson		added support for arrow-heads
 26-Jul-98 K. Barthelmann	changed \par to output newlines
+21-May-17 J. Holthuis		fix compilation errors
 
