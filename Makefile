@@ -20,6 +20,8 @@ YACC=bison -y
 #YACC=byacc
 LEX=flex
 
+.PHONY: all install clean lint shar tar path doc
+
 all: rail 
 
 install: rail rail.sty rail.man
