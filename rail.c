@@ -13,7 +13,7 @@
  */
 
 #ifndef lint
-static char SccsId[]="@(#)rail 26-Jul-1998";
+static char SccsId[]="@(#)rail 21-May-2017";
 #endif
 
 #define USAGE	"usage: %s [-+acdit] [file]\n"
